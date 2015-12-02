@@ -9,7 +9,8 @@ namespace ZQNet.Infrastructure.Crosscutting.AOP.Ioc
     {
         public void aa()
         {
-            var a = new ContainerBuilder();
+            //var a = new ContainerBuilder();
+            var dt = new DataTable();
         }
     }
 }
