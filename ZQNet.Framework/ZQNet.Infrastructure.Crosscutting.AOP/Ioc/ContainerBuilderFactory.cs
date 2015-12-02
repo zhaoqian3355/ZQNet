@@ -14,7 +14,7 @@ namespace ZQNet.Infrastructure.Crosscutting.AOP.Ioc
 
         public void CreateContainerBuilder()
         {
-            this.containerBuilder = new ContainerBuilder1();
+            this.containerBuilder = new ContainerBuilder();
         }
     }
 }

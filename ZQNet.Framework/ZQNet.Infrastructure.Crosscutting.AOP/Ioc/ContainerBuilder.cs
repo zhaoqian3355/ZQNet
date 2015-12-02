@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 
 namespace ZQNet.Infrastructure.Crosscutting.AOP.Ioc
 {
-    public class ContainerBuilder1:IContainerBuilder
+    public class ContainerBuilder:IContainerBuilder
     {
         public void aa()
         {
             //var a = new ContainerBuilder();
-            var dt = new DataTable();
+            //var dt = new DataTable();
         }
     }
 }
