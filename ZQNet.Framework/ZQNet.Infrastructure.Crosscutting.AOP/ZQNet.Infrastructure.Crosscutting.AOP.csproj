@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ioc\ContainerBuilder.cs" />
+    <Compile Include="Ioc\FacContainerBuilder.cs" />
     <Compile Include="Ioc\ContainerBuilderFactory.cs" />
     <Compile Include="Ioc\IContainerBuilder.cs" />
     <Compile Include="Ioc\IContainerBuilderFactory.cs" />
