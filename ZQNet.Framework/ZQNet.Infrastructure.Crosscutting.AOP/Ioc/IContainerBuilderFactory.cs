@@ -7,8 +7,6 @@ namespace ZQNet.Infrastructure.Crosscutting.AOP.Ioc
 {
     public interface IContainerBuilderFactory
     {
-        IContainerBuilder containerBuilder { get; set; }
-
-        void CreateContainerBuilder();
+        IContainerBuilder ContainerBuilder { get;}
     }
 }
