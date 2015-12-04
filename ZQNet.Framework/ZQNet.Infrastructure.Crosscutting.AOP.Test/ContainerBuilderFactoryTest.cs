@@ -24,19 +24,26 @@ namespace ZQNet.Infrastructure.Crosscutting.AOP.Test
 
             factory.ContainerBuilder.RegisterType<ConsoleLogger, ILogger>();
 
-           var dllFiles=Directory.GetFiles("\\","*.dll",SearchOption.TopDirectoryOnly);
+            factory.ContainerBuilder.RegisterAssemblyTypes(k => k.Name.EndsWith("Repository") || k.Name.EndsWith("Record"));
 
-           var AllAssemblies =BuildManager.GetReferencedAssemblies().Cast<Assembly>().ToArray();
+            var repository=factory.ContainerBuilder.Resolve<ITestRepository>();
 
-            //var assmblies = Assembly.("bin");
+            var record = factory.ContainerBuilder.Resolve<ITestRecord>();
 
-            factory.ContainerBuilder.RegisterAssemblyTypes(AllAssemblies);
+            Console.WriteLine(repository.Write());
+            Console.WriteLine(record.write());
 
             ILogger log=factory.ContainerBuilder.Resolve<ILogger>();
 
             factory.ContainerBuilder.Dispose();
 
             var str=log.writer();
+        }
+
+        [TestMethod]
+        public void GetData()
+        {
+            var dir = AppDomain.CurrentDomain.BaseDirectory;
         }
     }
 }

@@ -54,10 +54,12 @@
     <Compile Include="ContainerBuilderFactoryTest.cs" />
     <Compile Include="ITImplementer\IConfigReader.cs" />
     <Compile Include="ITImplementer\ILogger.cs" />
+    <Compile Include="ITImplementer\ITestRecord.cs" />
     <Compile Include="ITImplementer\ITestRepository.cs" />
     <Compile Include="TImplementer\ConsoleLogger.cs" />
     <Compile Include="TImplementer\MyComponent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TImplementer\TestRecord.cs" />
     <Compile Include="TImplementer\TestRepository.cs" />
   </ItemGroup>
   <ItemGroup>

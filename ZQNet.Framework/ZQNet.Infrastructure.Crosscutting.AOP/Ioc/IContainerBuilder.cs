@@ -11,7 +11,7 @@ namespace ZQNet.Infrastructure.Crosscutting.AOP.Ioc
     {
         void RegisterType<TImplementer, ITImplementer>()where TImplementer : class,new();
 
-        void RegisterAssemblyTypes(Assembly[] assemblies);
+        void RegisterAssemblyTypes(Func<Type,bool> where);
 
         ITImplementer Resolve<ITImplementer>() where ITImplementer : class;
 

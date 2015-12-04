@@ -2,14 +2,20 @@
 using Autofac.Builder;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Security.Policy;
 using System.Threading.Tasks;
 
 namespace ZQNet.Infrastructure.Crosscutting.AOP.Ioc
 {
     public class FacContainerBuilder : IContainerBuilder
     {
+        private static List<string> files;
+        private static List<Assembly> assemblies;
+        private static string dir = AppDomain.CurrentDomain.BaseDirectory;
+
         /// <summary>
         /// get current ContainerBuilder
         /// </summary>
@@ -58,9 +64,23 @@ namespace ZQNet.Infrastructure.Crosscutting.AOP.Ioc
         /// registerType by Assembly
         /// </summary>
         /// <param name="assembly"></param>
-        public void RegisterAssemblyTypes(Assembly[] assemblies)
+        public void RegisterAssemblyTypes(Func<Type, bool> where)
         {
-            this.ContainerBuilder.RegisterAssemblyTypes(assemblies).Where(k => k.Name.EndsWith("Repository")).AsImplementedInterfaces();
+            if (files == null||files.Count<=0)
+            {
+                files = Directory.GetFiles(dir, "*.dll", SearchOption.TopDirectoryOnly).ToList();
+            }
+
+            if (assemblies == null || assemblies.Count <= 0)
+            {
+                assemblies = new List<Assembly>();
+                files.ForEach(k =>
+                {
+                    assemblies.Add(Assembly.LoadFile(k));
+                });
+            }
+
+            this.ContainerBuilder.RegisterAssemblyTypes(assemblies.ToArray()).Where(where).AsImplementedInterfaces();
         }
 
         /// <summary>
