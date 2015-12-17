@@ -22,6 +22,8 @@ namespace ZQNet.Infrastructure.Crosscutting.AOP.Test
         {
             var factory = new ContainerBuilderFactory();
 
+            //var fac = new FacContainerBuilder();
+
             factory.ContainerBuilder.RegisterType<ConsoleLogger, ILogger>();
 
             factory.ContainerBuilder.RegisterAssemblyTypes(k => k.Name.EndsWith("Repository") || k.Name.EndsWith("Record"));

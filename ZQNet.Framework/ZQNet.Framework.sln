@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5-Framework", "5-Framework", "{531EE895-B7D8-4164-AF5A-A75410268CB1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZQNet.Infrastructure.Crosscutting.AOP", "ZQNet.Infrastructure.Crosscutting.AOP\ZQNet.Infrastructure.Crosscutting.AOP.csproj", "{16EC4FCB-7104-4775-B730-531FA6E7B283}"
@@ -10,6 +12,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5-Framework", "5-Framework", "{1209A369-A615-4156-BC15-6B1D39775320}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZQNet.Infrastructure.Crosscutting.AOP.Test", "ZQNet.Infrastructure.Crosscutting.AOP.Test\ZQNet.Infrastructure.Crosscutting.AOP.Test.csproj", "{4BB7D069-1C69-4DB1-9CD6-983EFABB283B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZQNet.Infrastructure.Owin", "ZQNet.Infrastructure.Owin\ZQNet.Infrastructure.Owin.csproj", "{3C335C79-71BF-4F64-9EF7-984AA4367866}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +29,10 @@ Global
 		{4BB7D069-1C69-4DB1-9CD6-983EFABB283B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BB7D069-1C69-4DB1-9CD6-983EFABB283B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BB7D069-1C69-4DB1-9CD6-983EFABB283B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C335C79-71BF-4F64-9EF7-984AA4367866}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C335C79-71BF-4F64-9EF7-984AA4367866}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C335C79-71BF-4F64-9EF7-984AA4367866}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C335C79-71BF-4F64-9EF7-984AA4367866}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -33,5 +41,6 @@ Global
 		{16EC4FCB-7104-4775-B730-531FA6E7B283} = {531EE895-B7D8-4164-AF5A-A75410268CB1}
 		{1209A369-A615-4156-BC15-6B1D39775320} = {27E120DC-E483-4030-9902-08066A5F24F0}
 		{4BB7D069-1C69-4DB1-9CD6-983EFABB283B} = {1209A369-A615-4156-BC15-6B1D39775320}
+		{3C335C79-71BF-4F64-9EF7-984AA4367866} = {531EE895-B7D8-4164-AF5A-A75410268CB1}
 	EndGlobalSection
 EndGlobal

@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Autofac.Builder;
+using Autofac.Integration.Mvc;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace ZQNet.Infrastructure.Crosscutting.AOP.Ioc
 {
-    public class FacContainerBuilder : IContainerBuilder
+    internal class FacContainerBuilder : IContainerBuilder
     {
         private static List<string> files;
         private static List<Assembly> assemblies;
@@ -84,6 +85,41 @@ namespace ZQNet.Infrastructure.Crosscutting.AOP.Ioc
         }
 
         /// <summary>
+        /// this method is for registering the mvc controllers.
+        /// </summary>
+        /// <param name="mvcApplication">the type of MvcApplication</param>
+        public void RegisterControllers(Type mvcApplication)
+        {
+            this.ContainerBuilder.RegisterControllers(mvcApplication.Assembly);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="TImplementer"></typeparam>
+        /// <param name="implementer"></param>
+        public void RegisterModule<TImplementer>(TImplementer implementer) where TImplementer : ModuleBase
+        {
+            this.ContainerBuilder.RegisterModule(implementer);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void RegisterModelBinders()
+        {
+            this.ContainerBuilder.RegisterModelBinders(Assembly.GetExecutingAssembly());
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void RegisterFilterProvider()
+        {
+            this.ContainerBuilder.RegisterFilterProvider();
+        }
+
+        /// <summary>
         /// this method is used for Resolving the type that we want to get.
         /// </summary>
         /// <typeparam name="ITImplementer"></typeparam>
@@ -94,7 +130,7 @@ namespace ZQNet.Infrastructure.Crosscutting.AOP.Ioc
         }
 
         /// <summary>
-        /// 
+        /// dispose the resource of using.
         /// </summary>
         public void Dispose()
         {

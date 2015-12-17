@@ -56,6 +56,7 @@
     <Compile Include="ITImplementer\ILogger.cs" />
     <Compile Include="ITImplementer\ITestRecord.cs" />
     <Compile Include="ITImplementer\ITestRepository.cs" />
+    <Compile Include="ModuleTests.cs" />
     <Compile Include="TImplementer\ConsoleLogger.cs" />
     <Compile Include="TImplementer\MyComponent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -67,6 +68,9 @@
       <Project>{16ec4fcb-7104-4775-b730-531fa6e7b283}</Project>
       <Name>ZQNet.Infrastructure.Crosscutting.AOP</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

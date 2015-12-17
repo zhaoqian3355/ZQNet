@@ -7,17 +7,12 @@ namespace ZQNet.Infrastructure.Crosscutting.AOP.Ioc
 {
     public class ContainerBuilderFactory : IContainerBuilderFactory
     {
-        private static IContainerBuilder containerBuilder;
+        public readonly static IContainerBuilder containerBuilder=new FacContainerBuilder();
 
         public IContainerBuilder ContainerBuilder
         {
             get
             {
-                if (containerBuilder == null)
-                {
-                    containerBuilder= new FacContainerBuilder();
-                }
-
                 return containerBuilder;
             }
         }
